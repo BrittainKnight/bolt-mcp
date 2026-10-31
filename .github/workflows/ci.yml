@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['24.15.0', '24', '26']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm audit --omit=dev
+      - run: npm pack --dry-run
+      - name: Public source hygiene
+        shell: bash
+        run: |
+          pattern='/(home|Users)/[[:alnum:]_.-]+/|[A-Za-z]:\\Users\\[[:alnum:]_.-]+|https?://(10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+)'
+          if git grep -nEI "$pattern"; then
+            echo 'Workstation-specific path or private network address found.'
+            exit 1
+          fi
+          if git log --all --root -p --format=fuller | grep -nE "$pattern"; then
+            echo 'Workstation-specific data found in Git history.'
+            exit 1
+          fi

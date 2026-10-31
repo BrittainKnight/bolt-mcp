@@ -1,0 +1,36 @@
+{
+  "name": "bolt-mcp",
+  "version": "0.2.0",
+  "description": "Deterministic surgical code harvesting and hexagonal adapter verification over MCP.",
+  "type": "module",
+  "license": "MIT",
+  "author": "meridian-alpha",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meridian-alpha/bolt-mcp.git"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "bin": {
+    "bolt-mcp": "bin/bolt-mcp.mjs"
+  },
+  "exports": "./src/index.mjs",
+  "files": [
+    "bin",
+    "src",
+    "web",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "start": "node bin/bolt-mcp.mjs",
+    "check": "node --check bin/bolt-mcp.mjs && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "typescript": "6.0.3",
+    "zod": "4.6.7"
+  }
+}

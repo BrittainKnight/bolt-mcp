@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bolt · Local Inspector</title><link rel="stylesheet" href="/inspector.css"><script type="module" src="/inspector.mjs"></script></head>
+<body>
+<header><a href="/" class="brand" aria-label="Bolt Inspector home">↯ <strong>bolt</strong><span>LOCAL INSPECTOR</span></a><span class="local">● Local · Read only</span></header>
+<main>
+<div class="intro"><div><p class="eyebrow">SURGICAL CODE. PROVEN CONTRACTS.</p><h1>Your integration ledger.</h1><p class="subtitle">Follow every slice from source to a verified boundary.</p></div><button id="refresh" type="button">Refresh ledger ↻</button></div>
+<p id="notice" role="status" aria-live="polite">Loading project ledger…</p>
+<ol class="pipeline" aria-label="Bolt and Build pipeline"><li>01 <span>Audit</span></li><li>02 <span>Harvest</span></li><li>03 <span>Scaffold</span></li><li>04 <span>Seam audit</span></li><li>05 <span>Verify</span></li><li>06 <span>Promote</span></li></ol>
+<section aria-labelledby="slots-title"><div class="section-title"><h2 id="slots-title">Plumbing slots</h2><span id="count"></span></div><div class="table-scroll"><table><thead><tr><th scope="col">Slot / capability</th><th scope="col">Stage</th><th scope="col">Source / license</th><th scope="col">Last verified</th></tr></thead><tbody id="slots"></tbody></table></div></section>
+<div class="columns"><section aria-labelledby="audit-title"><h2 id="audit-title">The three-bucket audit</h2><div id="audit"></div></section><section aria-labelledby="tickets-title"><h2 id="tickets-title">Open seam tickets</h2><ul id="tickets"></ul></section></div>
+<section aria-labelledby="notices-title"><h2 id="notices-title">Vendor security notices</h2><ul id="notices"></ul></section>
+<section aria-labelledby="runs-title"><h2 id="runs-title">Live-fire verification</h2><div id="runs"></div></section>
+<section aria-labelledby="registry-title"><h2 id="registry-title">Local registry</h2><ul id="registry"></ul></section>
+</main><footer>bolt-mcp v0.2.0 <span>Audit → Harvest → Scaffold → Polish → Verify → Promote</span></footer>
+</body></html>
