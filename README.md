@@ -1,5 +1,8 @@
 # bolt-mcp
 
+[![CI](https://github.com/BrittainKnight/bolt-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/BrittainKnight/bolt-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 **Take the capability. Keep your architecture. Prove the seam.**
 
 `bolt-mcp` is a local MCP server and CLI for harvesting a small, licensed slice of upstream code, wrapping it behind a canonical contract, and proving that boundary before reuse. A SQLite ledger records the workflow; a local inspector makes its evidence readable.
@@ -48,7 +51,7 @@ The ledger moves through `PENDING → HARVESTED → WIRED → POLISHED → VERIF
 Requirements: Node.js **24.15 or newer**, npm, and Git. Python **3.10+** is needed when harvesting/auditing Python source or running Python adapters. SQLite comes from Node's built-in `node:sqlite`; no native npm build or Python packages are needed.
 
 ```sh
-git clone https://github.com/meridian-alpha/bolt-mcp.git && cd bolt-mcp && npm ci --ignore-scripts && npm link
+git clone https://github.com/BrittainKnight/bolt-mcp.git && cd bolt-mcp && npm ci --ignore-scripts && npm link
 ```
 
 This is the source-release installation route; npm publication is a separate release step. For an existing checkout, run `npm ci --ignore-scripts && npm link`. Run `bolt-mcp --help` to confirm the CLI is available.

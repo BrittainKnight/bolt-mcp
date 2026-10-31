@@ -7,7 +7,7 @@
   "author": "meridian-alpha",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meridian-alpha/bolt-mcp.git"
+    "url": "https://github.com/BrittainKnight/bolt-mcp.git"
   },
   "engines": {
     "node": ">=24.15.0"
@@ -32,5 +32,9 @@
     "@modelcontextprotocol/sdk": "1.32.2",
     "typescript": "6.0.3",
     "zod": "4.6.7"
+  },
+  "homepage": "https://github.com/BrittainKnight/bolt-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/BrittainKnight/bolt-mcp/issues"
   }
 }
